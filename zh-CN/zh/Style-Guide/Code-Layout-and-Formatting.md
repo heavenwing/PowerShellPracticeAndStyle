@@ -257,13 +257,13 @@ $yesterdaysDate = (Get-Date).AddDays(-$i)
 
 #### 特殊符号前后的空格
 
-White-space is (mostly) irrelevant to PowerShell, but its proper use is key to writing easily readable code.
+空白 (大多) 与 PowerShell 无关，但是它的适当使用是编写易读代码的关键。
 
-Use a single space after commas and semicolons, and around pairs of curly braces.
+在逗号和分号后面，以及大括号周围使用单个空格。
 
-Subexpressions `$( ... )` and scriptblocks `{ ... }` should have a single space on the _inside_ of the braces or parentheses to improve readability by making code blocks stand out -- and to further distinguish scriptblocks from variable delimiter braces `${...}`
+子表达式 `$( ... )` 和脚本块`{ ... }` 应该在大括号或圆括号的内部有一个空格，以通过突出代码块来提高可读性——并进一步区分脚本块和可变分隔符大括号 `${...}`。
 
-Avoid unnecessary spaces inside parenthesis or square braces.
+避免括号或方括号内出现不必要的空格。
 
 
 
@@ -275,15 +275,15 @@ $Var = 1
 ```
 
 
-Obviously, these rules should not be applied in such a way as to affect output.
+显然，这些规则的适用不应该影响输出。
 
 
 
-#### Avoid Using Semicolons (`;`) as Line Terminators
+#### 避免使用分号 (`;`) 作为行终止
 
-PowerShell will not complain about extra semicolons, but they are unnecessary, and can get in the way when code is being edited or copy-pasted. They also result in extra do-nothing edits in source control when someone finally decides to delete them.
+PowerShell 不会抱怨额外的分号，但它们是不必要的，并且会在编辑或复制粘贴代码时造成障碍。 当有人最终决定删除它们时，它们还会在源代码管理中导致额外的无用编辑。
 
-They are also unnecessary when declaring hashtables if you are already putting each element on its own line:
+如果您已经将每个元素放在自己的行上，则在声明哈希表时分号也是不必要的：
 
 
 
