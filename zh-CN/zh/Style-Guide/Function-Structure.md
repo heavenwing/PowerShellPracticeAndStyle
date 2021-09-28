@@ -1,8 +1,8 @@
-### Functions
+### 函数
 
-Avoid using the `return` keyword in your functions. Just place the object variable on its own.
+在函数中避免使用 `return` 关键字。 只需将对象变量单独放置即可。
 
-When declaring simple functions leave a space between the function name and the parameters.
+声明简单函数时，在函数名和参数之间留一个空格。
 
 ```PowerShell
 function MyFunction ($param1, $param2) {
@@ -10,13 +10,13 @@ function MyFunction ($param1, $param2) {
 }
 ```
 
-### Advanced Functions
+### 高级函数
 
-For Advanced Functions and scripts use the format of **\<verb\>-\<noun\>** for naming. For a list of approved verbs the cmdlet `Get-Verb` will list them. On the noun side it can be composed of more than one joined word using Pascal Case and only singular nouns.
+对于高级函数和脚本，使用 **\<verb\>-\<noun\>** 的格式命名。 对于已批准动词的列表，cmdlet `Get-Verb` 将会列出他们。 在名词方面，它可以由多个使用 Pascal Case 的词连接组成，并且只能由单数名词组成。
 
-In Advanced Functions do not use the keyword `return` to return an object.
+高级函数不使用关键字 `return` 返回一个对象。
 
-In Advanced Functions you return objects inside the `Process {}` block and not in `Begin {}` or `End {}` since it defeats the advantage of the pipeline.
+在高级函数中，您返回 `Process {}` 块内的对象，而不是 `Begin {}` 或 `End {}` 中的对象，因为它破坏了pipeline的优势
 
 ```PowerShell
 # Bad
@@ -74,20 +74,20 @@ function Get-USCitizenCapability {
 }
 ```
 
-#### Always use CmdletBinding attribute.
+#### 总是使用 CmdletBinding 属性。
 
-#### Always have at least a `process {}` code block if any parameters takes values from the Pipeline.
+#### 如果任何参数从pipeline取值，总是有至少有一个 `process{}` 代码块。
 
-#### Specify an OutputType attribute if the advanced function returns an object or collection of objects.
+#### 如果高级函数返回对象或对象集合，则指定 OutputType 属性。
 
-If the function returns different object types depending on the parameter set provide one per parameter set.
+如果函数根据参数集返回不同的对象类型，则为每个参数集提供一个OutputType。
 
 ```PowerShell
 [OutputType([<TypeLiteral>], ParameterSetName = "<Name>")]
 [OutputType("<TypeNameString>", ParameterSetName = "<Name>")]
 ```
 
-#### When a ParameterSetName is used in any of the parameters, always provide a DefaultParameterSetName in the CmdletBinding attribute.
+#### 当ParameterSetName被用于任何参数时，总是在 CmdletBinding 属性中提供一个ParameterSetName。
 
 ```PowerShell
 function Get-User {
@@ -107,11 +107,11 @@ function Get-User {
 }
 ```
 
-#### When using advanced functions or scripts with CmdletBinding attribute avoid validating parameters in the body of the script when possible and use parameter validation attributes instead.
+#### 当使用 CmdletBinding 属性的高级函数或脚本时，可能时避免验证脚本正文中的参数，尽量使用参数验证属性。
 
-* **AllowNull** Validation Attribute
+* **AllowNull** 验证属性
 
-  The AllowNull attribute allows the value of a mandatory parameter to be null ($null).
+  AllowNull 属性允许强制参数的值为空 ($null)。
 
   ```PowerShell
   param (
@@ -122,9 +122,9 @@ function Get-User {
   )
   ```
 
-* **AllowEmptyString** Validation Attribute
+* **AllowEmptyString** 验证属性
 
-  The AllowEmptyString attribute allows the value of a mandatory parameter to be an empty string ("").
+  AllowEmptyString 属性允许强制参数的值为空字符串 ("")。
 
   ```PowerShell
   param (
@@ -135,9 +135,9 @@ function Get-User {
   )
   ```
 
-* **AllowEmptyCollection** Validation Attribute
+* **AllowEmptyCollection** 验证属性
 
-  The AllowEmptyCollection attribute allows the value of a mandatory parameter to be an empty collection (@()).
+  AllowEmptyCollection 属性允许强制参数的值为空集合 (@())。
 
   ```PowerShell
   param (
@@ -148,9 +148,9 @@ function Get-User {
   )
   ```
 
-* **ValidateCount** Validation Attribute
+* **ValidateCount** 验证属性
 
-  The ValidateCount attribute specifies the minimum and maximum number of parameter values that a parameter accepts. Windows PowerShell generates an error if the number of parameter values in the command that calls the function is outside that range.
+  ValidateCount 属性指定参数接受的参数值的最小和最大数量。 如果调用函数命令中的参数值数量超出该范围，Windows PowerShell 会生成错误。
 
   ```PowerShell
   param (
@@ -161,7 +161,7 @@ function Get-User {
   )
   ```
 
-* **ValidateLength** Validation Attribute
+* **ValidateLength** 验证属性
 
   The ValidateLength attribute specifies the minimum and maximum number of characters in a parameter or variable value. Windows PowerShell generates an error if the length of a value specified for a parameter or a variable is outside of the range.
 
