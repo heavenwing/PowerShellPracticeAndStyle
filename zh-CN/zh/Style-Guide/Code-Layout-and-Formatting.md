@@ -167,19 +167,19 @@ function Test-Code {
 
 #### 最大行长度
 
-Limit lines to 115 characters when possible.
+可能时，行限制为 115 个字符。
 
-Keeping lines to a small width allows scripts to be read in _one_ direction (top to bottom) without scrolling back-and-forth horizontally. What, exactly, this width should be is a one of the favorite arguing points among developers on the internet (more splintered than emacs vs vi or gnu GPL vs MIT).
+将行保持在较小的宽度，允许脚本在 _一个_ 方向上(从上到下) 读取，而无需水平滚动。 究竟是什么， 这个宽度应该是互联网上开发者最喜欢的争辩点之一(比emacs vs vi 或 gnu GPL vs MIT更多的分割) 。
 
-In this guide we use two particular sources for the maximum line width:
+在本指南中，最大行宽度使用两个特定来源：
 
-The PowerShell console is, by default, 120 characters wide, but it allows only 119 characters on output lines, and when entering multi-line text, PowerShell uses a line continuation prompt: `>>>` and thus limits your line length to 116 anyway.
+默认情况下，PowerShell 控制台的宽度为 120 个字符，但它只允许在输出行上包含 119 个字符，并且在输入多行文本时，PowerShell 使用行继续提示： `>>>`，因此无论如何都将行长度限制为 116。
 
-Github's current maximum line width varies between 121 and 126 depending on your browser and OS (and thus, font). However, the 115 line length suggested by PowerShell would be enough to even allow side-by-side diffs to be displayed without scrolling or wrapping on the current "standard" 1080p monitor.
+Github当前的最大行宽度根据您的浏览器和操作系统(即字体) 介于121至126之间。 但是，PowerShell 建议的 115 行长度甚至足以允许显示并排差异，而无需在当前“标准”1080p 显示器上滚动或换行。
 
-Again, this is a particularly flexible rule, and you should always follow the guidelines of projects when you're contributing to other people's projects.  Although most of us work on widescreen monitors, not everyone can see well without magnification or extremely large fonts.
+这也是一项特别灵活的规则，当你为其他人的项目作出贡献时，你应该始终遵循项目的指导方针。  虽然我们大多数人都在用大屏显示器，但不是每个人都能看到大规模的或极大的字体。
 
-The preferred way to avoid long lines is to use splatting (see [Get-Help about_Splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx)) and PowerShell's implied line continuation inside parentheses, brackets, and braces -- these should **always** be used in preference to the backtick for line continuation when applicable, even for strings:
+避免长行的首选方法是在括号、方括号和大括号内使用 splatting(见 [Get-Help about_Splating](https://technet.microsoft.com/en-us/library/jj672955.aspx)) 和 PowerShell 在括号内的隐含行延续 - 方括号和方括号—— 应 **始终**使用这些方括号和方括号，并在适用时，这些应始终优先于反引号用于行延续，即使是字符串：
 
 
 
@@ -194,31 +194,31 @@ Write-Host -Object ("This is an incredibly important, and extremely long message
 
 
 
-#### Blank Lines and Whitespace
+#### 空白行和空格
 
-Surround function and class definitions with _two_ blank lines.
+用两个空行包围函数和类定义。
 
-Method definitions within a class are surrounded by a single blank line.
+一个类内的方法定义被一个空白行包围。
 
-Blank lines may be omitted between a bunch of related one-liners (e.g. empty functions)
+一堆相关的单行代码之间可以省略空行（例如空函数）。
 
-Additional blank lines may be used sparingly to separate groups of related functions, or within functions to indicate logical sections (e.g. before a block comment).
+可以谨慎地使用额外的空行来分隔相关函数组，或在函数内指示逻辑部分（例如，在块注释之前）。
 
-End each file with a single blank line.
-
-
-
-#### Trailing spaces
-
-Lines should not have trailing whitespace. Extra spaces result in future edits where the only change is a space being added or removed, making the analysis of the changes more difficult for no reason.
+以单个空白行结束每个文件。
 
 
 
-#### Spaces around parameters and operators
+#### 尾随空格
 
-You should use a single space around parameter names and operators, including comparison operators and math and assignment operators, even when the spaces are not necessary for PowerShell to correctly parse the code.
+行中不应有尾随的空格。 额外的空格会导致将来的编辑，其中唯一的更改是添加或删除空格，从而无缘无故地使更改分析变得更加困难。
 
-One notable exception is when using colons to pass values to switch parameters:
+
+
+#### 参数和运算符前后的空格
+
+您应该在参数名称和运算符周围使用单个空格，包括比较运算符以及数学和赋值运算符，即使这些空格对于 PowerShell 正确解析代码不是必需的。
+
+一个值得注意的例外是使用冒号传递值来切换参数时：
 
 
 
@@ -231,7 +231,7 @@ $variable = Get-Content -Path $FilePath -Wait:($ReadCount -gt 0) -TotalCount ($R
 ```
 
 
-Another exception is when using [Unary Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators#unary-operators):
+另一个例外是使用 [Unary Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators#unary-operators):
 
 
 
@@ -255,7 +255,7 @@ $yesterdaysDate = (Get-Date).AddDays(-$i)
 
 
 
-#### Spaces around special characters
+#### 特殊符号前后的空格
 
 White-space is (mostly) irrelevant to PowerShell, but its proper use is key to writing easily readable code.
 
