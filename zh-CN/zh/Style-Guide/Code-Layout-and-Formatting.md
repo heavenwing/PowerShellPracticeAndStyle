@@ -4,26 +4,26 @@
 
 #### 保持布局一致性
 
-关于缩进、行长度和大小写的规则涉及基础代码之间的一致性。 Long practice has shown that it's easier to read and understand code when it looks familiar and you're not being distracted by details, which means that it's better for everyone in the community to follow a single set of rules.
+关于缩进、行长度和大小写的规则涉及基础代码之间的一致性。 长久的实践表明，当你看起来很熟悉并且注意力不会被细节分散时，阅读和理解代码就比较容易。 这意味着每个人都应该遵循一套规则。
 
-We don't expect everyone to follow these guidelines, and rules for individual projects always trump these. Whether for legacy reasons, or to match guidelines for multiple languages in a single project, different projects may have different style guidelines. Since the goal is consistency, you should always abide by any style rules that are in place on the project you are contributing to.
+我们并不期望每个人都遵守这些准则，个别项目的规则总是超越这些准则。 无论是由于遗留的原因，还是为了在一个单一项目中匹配多种语言的指南，不同的项目都可能有不同的风格指南。 由于目标是一致性，您应该始终遵守您所贡献的项目上任何的样式规则。
 
-If you do have a legacy project that is in source control and you decide to reformat code to adopt these rules, try to make all of your whitespace changes in a single commit that does _nothing_ but edit the whitespace. You should never reformat the whitespace on a file as _part_ of a content change because it makes the changes hard to spot.
+如果你确实有一个源码控制的旧项目，你决定修改代码来采用这些规则。 尝试在单个提交中做所有空白的更改，这些更改只能编辑空白处。 您不应该在文件上的空白处进行格式化，因为它是内容变化的 _一部分_ ，会使得更改变得难以发现。
 
-#### Capitalization Conventions
+#### 大小写惯例
 
-PowerShell is **not** case sensitive, but we follow capitalization conventions to make code easy to read. They are based on the [capitalization conventions](https://msdn.microsoft.com/en-us/library/ms229043) Microsoft created for the .NET framework, since PowerShell is a .NET scripting language, and PowerShell cmdlets are primarily written in .NET languages following those guidelines.
+PowerShell不是大小写敏感的，但我们遵循大小写惯例使得代码可读。 它们基于微软为.NET框架创建的 [大写协议](https://msdn.microsoft.com/en-us/library/ms229043) ，因为PowerShell 是一个 .NET脚本语言，并且 PowerShell cmdlet主要是按照这些准则用.NET语言撰写的。
 
-##### Terminology
+##### 术语
 
-* lowercase - all lowercase, no word separation
-* UPPERCASE - all capitals, no word separation
-* PascalCase - capitalize the first letter of each word
-* camelCase - capitalize the first letter of each word _except_ the first.
+* lowercase - 所有小写，没有单词分隔
+* UPPERCASE - 所有大写，没有单词分隔
+* PascalCase - 大写每个单词的第一个字母
+* camelCase - 大写每个单词的第一个字母，但不包括第一个单词。
 
-PowerShell uses PascalCase for _all_ public identifiers: module names, function or cmdlet names, class, enum, and attribute names, public fields or properties, global variables and constants, etc. In fact, since the _parameters_ to PowerShell commands are actually _properties_ of .Net classes, even parameters use PascalCase rather than camelCase.
+PowerShell 将 PascalCase 用于所有公共标识符：模块名称、函数或 cmdlet 名称、类、枚举和属性名称、公共字段或属性、全局变量和常量等。 事实上，由于PowerShell 命令的参数实际上是 .Net 类的属性，参数也使用 PascalCase 而不是camelCase。
 
-PowerShell language keywords are written in lower case (yes, even `foreach` and `dynamicparam`), as well as operators such as `-eq` and `-match`. The keywords in comment-based help are written in UPPERCASE to make it easy to spot them among the dense prose of documentation.
+PowerShell 关键词是用小写的(是，甚至包括 `foreach` 和 `dynamicparam`)， 以及诸如操作符 `-eq` 和 `-match` 等。 以评注为基础的帮助中的关键词是用UPPERCASE写成的，以便于关键词可以在繁复的文件被发现。
 
 ```powershell
 function Write-Host {
@@ -54,19 +54,21 @@ function Write-Host {
     ...
 ```
 
-As stated previously, PowerShell uses PascalCase for _all_ public identifiers. Function names should follow PowerShell's `Verb-Noun` naming conventions, using PascalCase within both Verb and Noun.
+如前所述，PowerShell 使用 PascalCase 来处理 _所有的_ 公开标识符。 函数名称应该遵循PowerShell的 `Verb-Noun` 命名协议，在Verb 和 Noun中同时使用PascalCase 。
 
-A special case is made for two-letter acronyms in which both letters are capitalized, as in the variable `$PSBoundParameters` or the command `Get-PSDrive`. Note that ([as specified in the .NET guidelines](https://msdn.microsoft.com/en-us/library/ms229043#Anchor_1)) this does not affect the commonly capitalized (but not acronym) words "OK" and "ID" . You should also not extend it to compound acronyms, such as when Azure's Resource Manager (RM) meets a Virtual Machine (VM) in `Start-AzureRmVM`...
+特殊情况是英文缩写为两字母，两字母都采用大写。 如变量 `$PSBoundParameters` 或命令 `Get-PSDrive`。 请注意([在 . NET准则中指定的](https://msdn.microsoft.com/en-us/library/ms229043#Anchor_1))这并不影响常用的大写(但不影响缩略语) "OK" 和 "ID" 。 您也不应将其延伸至复合缩略语， 例如：Azure's Resource Manager (RM) 在 `Start-AzureRmVM...` 中遇到Virutal Machine (VM) 时。
 
-> We are aware that there are **many** places where these conventions have not been followed properly for various reasons -- you should consider these _exceptions_ (such as for COM interop) or _mistakes_ (such as `System.Data.SqlClient.SQLDebugging`), but not a reason for you to disregard the conventions.
+> 我们知道，由于各种原因，**许多**地方没有正确遵循这些约定——您应该考虑这些_例外_（例如 COM 互操作）或_错误_（例如`System.Data.SqlClient.SQLDebugging`），但这些不是您无视约定的理由。
 
-If you wish, you may use camelCase for variables within your functions (or modules) to distinguish _private_ variables from parameters, but this is a matter of taste. Shared variables should be distinguished by using their scope name, such as `$Script:PSBoundParameters` or `$Global:DebugPreference`. If you are using camelCase for a variable that starts with a two-letter acronym (where both letters are capitalized), both letters should be set to lowercase (such as `adComputer`).
+如果您愿意，您可以对函数（或模块）中的变量使用camelCase，以区分_私有_变量和参数，但这是个人喜好问题。 共享变量应该通过使用其范围名称来区分，如 `$Script:PSBoundParameters` 或 `$Global:DebugPrefion`。 如果您正在使用camelCase作为一个变量，以双字母缩写开头(两字母均为大写)， 两个字母都应该设置为小写(例如 `adComputer`)。
 
-#### One True Brace Style
+#### One True Brace 风格
 
-This guide recommends the so-called ["One True Brace Style" variant to K&R](https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/81#issuecomment-285835313), which requires that every braceable _statement_ should  have the opening brace on the _end of a line_, and the closing brace at the _beginning of a line_.
+本指南向 K&R</a> 推荐所谓的“One True Brace Style” 变体，它要求每个可支撑的 _ 语句_ 都应在 _ 结尾处 _有左大括号，以及_行首 _有右大括号。</p> 
 
-There is one notable exception when passing small scriptblocks to parameters (where K&R would allow leaving off the braces entirely), we allow putting the entire statement on a single line.
+将小脚本块传递给参数时有一个值得注意的例外（其中 K&R 允许完全省略大括号），我们允许将整个语句放在一行中。
+
+
 
 ```powershell
 enum Color {
@@ -92,13 +94,18 @@ function Test-Code {
 Get-ChildItem | Where-Object { $_.Length -gt 10mb }
 ```
 
-The primary reason for this recommendation is practical: there are no exceptions necessary when following this rule, and when code is written following this style, _new lines_ of code can be inserted between any two lines with no risk of accidentally breaking the code by separating braces from their statement blocks. Thus, it's easier to follow, and makes errors less likely.
 
-Because this choice was somewhat contentious in the community (about 1/3 of voters opposed), it's worth adding some addition reasoning here: First: in some historical consoles, it was necessary to write this way, so much of the early PowerShell code follows this style anyway. Second: PowerShell functions which accept scriptblocks (such as `ForEach-Object` and `Where-Object`) are common, and an _inherent_ part of the syntax of important PowerShell-based domain-specific languages such as DSC. Since it's **required** to place the opening brace on the end of the line in those cases, the only _consistent_ option is to follow OTBS.
+这个建议的主要原因是实用的：遵循这个规则没有必要的例外，当代码按照这种风格编写时，_新行_代码可以插入任何两行之间，没有将大括号与其语句块分开来不小心破坏了代码的风险。 因此更容易追踪，并使错误变得不那么可能。
+
+因为这种选择有些争议（约三分之一反对）， 它值得在此添加一些添加理由：第一：在一些历史控制台中， 有必要以这种方式撰写，很多早期的 PowerShell 代码仍然沿用这种风格。 第二：接受脚本模块的PowerShell 函数(例如 `ForEach-Object` and `Where-Object`) 是常见的， 并且是重要的基于 PowerShell 的重要域名语法如DSC 的_固有_部分 。 Since it's **required** to place the opening brace on the end of the line in those cases, the only _consistent_ option is to follow OTBS.
+
+
 
 #### Always Start With CmdletBinding
 
 All of your scripts or functions should start life as something like this snippet:
+
+
 
 ```powershell
 [CmdletBinding()]
@@ -109,7 +116,10 @@ end {
 }
 ```
 
+
 You can always delete or ignore one of the blocks (or add the `begin` block), add parameters and necessary validation and so on, but you should **avoid** writing scripts or functions without `[CmdletBinding()]`, and you should always at least _consider_ making it take pipeline input.
+
+
 
 #### Prefer: param (), begin, process, end
 
@@ -117,11 +127,17 @@ Having a script written in the order of execution makes the intent clearer. Sinc
 
 More explicit code is more maintainable. While PowerShell allows leaving off the explicit name of the `end` block (and even has a `filter` keyword that converts the anonymous block to a `process` block), we recommend against using these features as it results in less explicit code.
 
+
+
 #### Indentation
+
+
 
 ##### Use four *spaces* per indentation level
 
 Usually you will press the `[Tab]` key to indent, but most editors can be configured to insert spaces instead of actual tab characters. For most programming languages and editors (including PowerShell ISE) the default is four spaces, and that's what we recommend. Different teams and projects may have different standards, and when contributing to a project, you should abide by the predominant style, of course.
+
+
 
 ```powershell
 function Test-Code {
@@ -131,7 +147,10 @@ function Test-Code {
 }
 ```
 
+
 Indenting more than 4-spaces is acceptable for continuation lines (when you're wrapping a line which was too long). In such cases you might indent more than one level, or even indent indent an odd number of spaces to line up with a method call or parameter block on the line before.
+
+
 
 ```powershell
 function Test-Code {
@@ -142,6 +161,9 @@ function Test-Code {
     }
 }
 ```
+
+
+
 
 #### Maximum Line Length
 
@@ -159,6 +181,8 @@ Again, this is a particularly flexible rule, and you should always follow the gu
 
 The preferred way to avoid long lines is to use splatting (see [Get-Help about_Splatting](https://technet.microsoft.com/en-us/library/jj672955.aspx)) and PowerShell's implied line continuation inside parentheses, brackets, and braces -- these should **always** be used in preference to the backtick for line continuation when applicable, even for strings:
 
+
+
 ```powershell
 Write-Host -Object ("This is an incredibly important, and extremely long message. " +
                          "We cannot afford to leave any part of it out, " +
@@ -166,6 +190,9 @@ Write-Host -Object ("This is an incredibly important, and extremely long message
                          "Using string concatenation lets us use short lines here, " +
                          "and still get a long line in the output")
 ```
+
+
+
 
 #### Blank Lines and Whitespace
 
@@ -179,15 +206,21 @@ Additional blank lines may be used sparingly to separate groups of related funct
 
 End each file with a single blank line.
 
+
+
 #### Trailing spaces
 
 Lines should not have trailing whitespace. Extra spaces result in future edits where the only change is a space being added or removed, making the analysis of the changes more difficult for no reason.
+
+
 
 #### Spaces around parameters and operators
 
 You should use a single space around parameter names and operators, including comparison operators and math and assignment operators, even when the spaces are not necessary for PowerShell to correctly parse the code.
 
 One notable exception is when using colons to pass values to switch parameters:
+
+
 
 ```PowerShell
 # Do not write:
@@ -197,7 +230,10 @@ $variable=Get-Content $FilePath -Wait:($ReadCount-gt0) -First($ReadCount*5)
 $variable = Get-Content -Path $FilePath -Wait:($ReadCount -gt 0) -TotalCount ($ReadCount * 5)
 ```
 
+
 Another exception is when using [Unary Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators#unary-operators):
+
+
 
 ```PowerShell
 # Do not write:
@@ -216,6 +252,9 @@ $i++
 $yesterdaysDate = (Get-Date).AddDays(-$i)
 ```
 
+
+
+
 #### Spaces around special characters
 
 White-space is (mostly) irrelevant to PowerShell, but its proper use is key to writing easily readable code.
@@ -226,6 +265,8 @@ Subexpressions `$( ... )` and scriptblocks `{ ... }` should have a single space 
 
 Avoid unnecessary spaces inside parenthesis or square braces.
 
+
+
 ```powershell
 $Var = 1
 "This is a string with one (${Var}) delimited variable."
@@ -233,13 +274,18 @@ $Var = 1
 "There are $( (Get-ChildItem).Count ) files."
 ```
 
+
 Obviously, these rules should not be applied in such a way as to affect output.
+
+
 
 #### Avoid Using Semicolons (`;`) as Line Terminators
 
 PowerShell will not complain about extra semicolons, but they are unnecessary, and can get in the way when code is being edited or copy-pasted. They also result in extra do-nothing edits in source control when someone finally decides to delete them.
 
 They are also unnecessary when declaring hashtables if you are already putting each element on its own line:
+
+
 
 ```PowerShell
 # This is the preferred way to declare a hashtable if it extends past one line:
