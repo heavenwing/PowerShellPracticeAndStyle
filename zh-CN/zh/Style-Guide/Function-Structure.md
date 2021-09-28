@@ -163,7 +163,7 @@ function Get-User {
 
 * **ValidateLength** 验证属性
 
-  The ValidateLength attribute specifies the minimum and maximum number of characters in a parameter or variable value. Windows PowerShell generates an error if the length of a value specified for a parameter or a variable is outside of the range.
+  ValidateLength 属性指定参数或变量值中的最小和最大字符数。 如果为参数或变量指定的值的长度超出范围，Windows PowerShell 会生成错误。
 
   ```PowerShell
   param (
@@ -174,9 +174,9 @@ function Get-User {
   )
   ```
 
-* **ValidatePattern** Validation Attribute
+* **ValidatePattern** 验证属性
 
-  The ValidatePattern attribute specifies a regular expression that is compared to the parameter or variable value. Windows PowerShell generates an error if the value does not match the regular expression pattern.
+  ValidatePattern 属性指定与参数或变量值进行比较的正则表达式。 如果值与正则表达式模式不匹配，Windows PowerShell 会生成错误。
 
   ```PowerShell
   param (
@@ -187,9 +187,9 @@ function Get-User {
   )
   ```
 
-* **ValidateRange** Validation Attribute
+* **ValidateRange** 验证属性
 
-  The ValidateRange attribute specifies a numeric range for each parameter or variable value. Windows PowerShell generates an error if any value is outside that range.
+  ValidateRange 属性为每个参数或变量值指定一个数字范围。 如果任何值超出该范围，Windows PowerShell 会生成错误。
 
   ```PowerShell
   param (
@@ -200,11 +200,11 @@ function Get-User {
   )
   ```
 
-* **ValidateScript** Validation Attribute
+* **ValidateScript** 验证属性
 
-  The ValidateScript attribute specifies a script that is used to validate a parameter or variable value. Windows PowerShell pipes the value to the script, and generates an error if the script returns "false" or if the script throws an exception.
+  ValidateScript 属性指定用于验证参数或变量值的脚本。 Windows PowerShell 将值通过pipeline传递给脚本，如果脚本返回“false”或脚本引发异常，则会生成错误。
 
-  When you use the ValidateScript attribute, the value that is being validated is mapped to the $_ variable. You can use the $_ variable to refer to the value in the script.
+  当您使用 ValidateScript 属性时，正在验证的值被映射到 $_ 变量。 您可以使用使用 $_ 变量来引用脚本中的值。
 
   ```PowerShell
   param (
@@ -215,9 +215,9 @@ function Get-User {
   )
   ```
 
-* **ValidateSet** Attribute
+* **ValidateSet** 验证属性
 
-  The ValidateSet attribute specifies a set of valid values for a parameter or variable. Windows PowerShell generates an error if a parameter or variable value does not match a value in the set. In the following example, the value of the Detail parameter can only be "Low," "Average," or "High."
+  ValidateSet 属性为参数或变量指定一组有效值。 如果参数或变量值与集合中的值不匹配，Windows PowerShell 会生成错误。 在以下示例中，Detail 参数的值只能是“Low”、“Average”或“High”。
 
   ```PowerShell
   param (
@@ -228,11 +228,11 @@ function Get-User {
   )
   ```
 
-* **ValidateNotNull** Validation Attribute
+* **ValidateNotNull** 验证属性
 
-  The ValidateNotNull attribute specifies that the parameter value cannot be null ($null). Windows PowerShell generates an error if the parameter value is null.
+  ValidateNotNull 属性指定参数值不能为空 ($null)。 如果参数值为空，Windows PowerShell 会生成错误。
 
-  The ValidateNotNull attribute is designed to be used when the type of the parameter value is not specified or when the specified type will accept a value of Null. (If you specify a type that will not accept a null value, such as a string, the null value will be rejected without the ValidateNotNull attribute, because it does not match the specified type.)
+  ValidateNotNull 属性设计为在未指定参数值的类型或指定的类型将接受 Null 值时使用。 （如果您指定一个不接受空值的类型，例如字符串，则空值将在没有 ValidateNotNull 属性的情况下被拒绝，因为它与指定的类型不匹配。
 
   ```PowerShell
   param (
@@ -242,9 +242,9 @@ function Get-User {
   )
   ```
 
-* **ValidateNotNullOrEmpty** Validation Attribute
+* **ValidateNotNullOrEmpty** 验证属性
 
-  The ValidateNotNullOrEmpty attribute specifies that the parameter value cannot be null ($null) and cannot be an empty string (""). Windows PowerShell generates an error if the parameter is used in a function call, but its value is null, an empty string, or an empty array.
+  ValidateNotNullOrEmpty 属性指定参数值不能为空 ($null) 且不能为空字符串 ("")。 如果在函数调用中使用了该参数，但其值为 null、空字符串或空数组，则 Windows PowerShell 会生成错误。
 
   ```PowerShell
   param (
