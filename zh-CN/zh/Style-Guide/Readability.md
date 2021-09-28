@@ -1,8 +1,8 @@
-TODO: This section should probably be merged to [Code Layout and Formatting](Code-Layout-and-Formatting.md), and based on the [#15](https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/15), we should remove or rewrite the backticks section.
+待办：本节可能应合并到 [代码布局和格式](Code-Layout-and-Formatting.md)， 且基于 [#15](https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/15)。我们应该删除或重写背景部分。
 
-# READ-01 Indent your code
+# READ-01 缩进您的代码
 
-Consider this code example:
+考虑如下代码示例：
 
 ```PowerShell
 if ($this -gt $that) {
@@ -10,7 +10,7 @@ if ($this -gt $that) {
 }
 ```
 
-And now consider this one:
+现在考虑这个：
 
 ```PowerShell
 if ($this -gt $that)
@@ -19,11 +19,11 @@ if ($this -gt $that)
 }
 ```
 
-Neither of these is better than the other. Ask 100 coders which they prefer and you'll get roughly half liking either one. Now, when you start dealing with commands that accept script blocks as parameters, things can get trickier because of the way PowerShell parses syntax. "Wrong" is wrong. With scripting constructs, like the two examples above, there's no functional difference.
+两者都不比对方好。 问100个人他们喜欢的代码，会有大约一半喜欢其中一个。 现在，当你开始处理接受脚本块作为参数的命令时，由于PowerShell 解析语法的方式，事情可能变得更加复杂。 "错误"是错误的。 与上面的两个例子一样，脚本构建没有功能上的差别。
 
-Continuing in that vein, understand that the following are basically guidelines from mass consensus; they're not hard-and-fast rules. That said, there are arguments in favor of these, and you should consider the arguments before dismissing these ideas.
+继续按照这种思路理解，以下基本上是大众共识的指导方针；它们不是硬性规定。 也就是说，有一些支持这些观点的论据，您应该在驳回这些想法之前考虑这些论点。
 
-First, format your code properly. The convention is to indent within constructs, to make it clearer what "belongs to" the construct.
+首先，正确格式化你的代码。 惯例是在构造内缩进，以使读者其更清楚什么“属于”一个构造。
 
 ```PowerShell
 foreach ($computer in $computers) {
@@ -32,11 +32,11 @@ foreach ($computer in $computers) {
 }
 ```
 
-You will probably be reviled if you don't format carefully.
+如果您不仔细格式化，可能会受到指责。
 
-# READ-02 Avoid backticks
+# READ-02 避免反引号
 
-Consider this:
+请考虑：
 
 ```PowerShell
 Get-WmiObject -Class Win32_LogicalDisk `
@@ -44,9 +44,9 @@ Get-WmiObject -Class Win32_LogicalDisk `
               -ComputerName SERVER2
 ```
 
-In general, the community feels you should avoid using those backticks as "line continuation characters" when possible. They're hard to read, easy to miss, and easy to mistype. Also, if you add an extra whitespace after the backtick in the above example, then the command won't work. The resulting error is hard to correlate to the actual problem, making debugging the issue harder.
+一般来说，社区认为您应该尽可能避免将这些反引号用作“行继续符”。 它们难以阅读，容易错过，也容易打错。 另外，如果您在上述示例中的背面后添加额外的空格，则命令将无法工作。 由此产生的错误很难与实际问题相关联，从而使调试问题变得更加困难。
 
-Here's an alternative:
+下面是一个替代方案：
 
 ```PowerShell
 $GetWmiObjectParams = @{
@@ -57,6 +57,6 @@ $GetWmiObjectParams = @{
 Get-WmiObject @GetWmiObjectParams
 ```
 
-The technique is called _splatting_. It lets you get the same nice, broken-out formatting without using the backtick. You can also line break after almost any comma, pipe character, or semicolon without using a backtick.
+这种技术叫做 _splatting_。 它可以让您在不使用反引号的情况下获得同样漂亮的、中断的格式。 您还可以在几乎任何逗号、pipe字符或分号之后换行而不使用反引号。
 
-The backtick is not universally hated - but it can be inconvenient. If you have to use it for line breaks, well then, use it. Just try not to have to.
+反引号并不是普遍讨厌的 - 但它可能不方便。 如果您必须将它用于换行，那么请使用它。 但尽量不要这样做。
