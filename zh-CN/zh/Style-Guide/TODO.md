@@ -1,10 +1,10 @@
-These documents are in an extremely rough state, not suitable for inclusion in the main guide yet.
+这些文件处于极其粗糙的状态，尚不适合包含在主要指南中。
 
-- [Include Help](#include-help)
+- [包含Help](#include-help)
 
-### Include Help
+### 包含Help
 
-Discuss: Add a blank line between comment based help and function declaration? Discuss: Minimum acceptable comment based help: Synopsis, Parameters, and an example for each parameter set (plus pipeline examples if you can contrive one)
+讨论：在基于注释的帮助和函数声明之间添加一个空白行？ 讨论：基于最低可接受评论的帮助：概要、参数和每个参数集的示例（如果可以的话，还可以加上pipeline示例）
 
-TODO: Style guide for MAML help?
+待办：MAML help的格式指南？
 
