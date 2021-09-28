@@ -1,10 +1,10 @@
-### 记录和评论
+### 记录和注释
 
-与该代码相矛盾的评论比没有评论更加严重。 当代码更改时，总是优先考虑及时更新评论!
+与该代码相矛盾的注释比没有注释更加严重。 当代码更改时，总是优先考虑及时更新注释。
 
-评论应使用英文，并应是完整的句子。 If the comment is short, the period at the end can be omitted.
+注释应使用英文，并应是完整的句子。 如果注释很短，则可省略末尾的句号。
 
-Remember that comments should serve to your reasoning and decision-making, not attempt to explain what a command does. With the exception of regular expressions, well-written PowerShell can be pretty self-explanatory.
+请记住，注释应该有助于你的推理和决策，而不是试图解释命令的作用。 除了正则表达式之外，编写良好的 PowerShell 可以一目了然。
 
 ```PowerShell
 # Do not write:
@@ -16,9 +16,9 @@ $Margin = $Margin + 2
 $Margin = $Margin + 2
 ```
 
-#### Block comments
+#### 块注释
 
-Don't go overboard with comments. Unless your code is particularly obscure, don't precede each line with a comment -- doing so breaks up the code and makes it harder to read.  Instead, write a single block comment.
+不要过分注释。 除非你的代码特别模糊， 不要在每行前面加上一条注释 — — 这样做会破坏代码并使它更难阅读。  相反，写一个块注释。
 
 Block comments generally apply to some or all of the code which follows them, and are indented to the same level as that code. Each line should start with a # and a single space.
 
