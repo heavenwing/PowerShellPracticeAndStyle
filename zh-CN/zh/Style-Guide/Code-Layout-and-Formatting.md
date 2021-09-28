@@ -97,13 +97,13 @@ Get-ChildItem | Where-Object { $_.Length -gt 10mb }
 
 这个建议的主要原因是实用的：遵循这个规则没有必要的例外，当代码按照这种风格编写时，_新行_代码可以插入任何两行之间，没有将大括号与其语句块分开来不小心破坏了代码的风险。 因此更容易追踪，并使错误变得不那么可能。
 
-因为这种选择有些争议（约三分之一反对）， 它值得在此添加一些添加理由：第一：在一些历史控制台中， 有必要以这种方式撰写，很多早期的 PowerShell 代码仍然沿用这种风格。 第二：接受脚本模块的PowerShell 函数(例如 `ForEach-Object` and `Where-Object`) 是常见的， 并且是重要的基于 PowerShell 的重要域名语法如DSC 的_固有_部分 。 Since it's **required** to place the opening brace on the end of the line in those cases, the only _consistent_ option is to follow OTBS.
+因为这种选择有些争议（约三分之一反对）， 它值得在此添加一些添加理由：第一：在一些历史控制台中， 有必要以这种方式撰写，很多早期的 PowerShell 代码仍然沿用这种风格。 第二：接受脚本模块的PowerShell 函数(例如 `ForEach-Object` and `Where-Object`) 是常见的， 并且是重要的基于 PowerShell 的重要域名语法如DSC 的_固有_部分 。 由于在这些情况下**需要**将左大括号放在行尾，因此唯一_一致_的选择是遵循 OTBS。
 
 
 
-#### Always Start With CmdletBinding
+#### 总是从 CmdletBinding 开始
 
-All of your scripts or functions should start life as something like this snippet:
+你所有的脚本或函数都应该以这个代码片段开始：
 
 
 
@@ -117,25 +117,25 @@ end {
 ```
 
 
-You can always delete or ignore one of the blocks (or add the `begin` block), add parameters and necessary validation and so on, but you should **avoid** writing scripts or functions without `[CmdletBinding()]`, and you should always at least _consider_ making it take pipeline input.
+您始终可以删除或忽略其中一个块（或添加 `begin` 块）、添加参数和必要的验证等，但您应该**避免**编写脚本或函数没有 `[CmdletBinding()]`，并且您应该始终至少_考虑_使其接受pipeline输入。
 
 
 
-#### Prefer: param (), begin, process, end
+#### 首选：param (), begin, process, end
 
-Having a script written in the order of execution makes the intent clearer. Since there is no functional reason to have these blocks out of order (they _will_ still be executed in the normal order), writing them out of order can be confusing, and makes code more difficult to maintain and debug.
+以执行顺序写脚本使意图更加清楚。 由于没有功能上的原因让这些块打乱顺序（它们仍将按正常顺序执行），乱序编写它们可能会令人困惑，并使代码更难以维护和调试。
 
-More explicit code is more maintainable. While PowerShell allows leaving off the explicit name of the `end` block (and even has a `filter` keyword that converts the anonymous block to a `process` block), we recommend against using these features as it results in less explicit code.
-
-
-
-#### Indentation
+更明确的代码更易维护。 虽然PowerShell的允许舍弃end block的明确的名称(甚至有 `过滤器` 关键字将匿名块转换为 `进程` 块)， 我们建议不要使用这些功能，因为它导致代码不那么明确。
 
 
 
-##### Use four *spaces* per indentation level
+#### 缩进
 
-Usually you will press the `[Tab]` key to indent, but most editors can be configured to insert spaces instead of actual tab characters. For most programming languages and editors (including PowerShell ISE) the default is four spaces, and that's what we recommend. Different teams and projects may have different standards, and when contributing to a project, you should abide by the predominant style, of course.
+
+
+##### 每个缩进级别使用四个 *空格*
+
+通常您会按 `[Tab]` 键缩进，但大多数编辑器可以配置为插入空格而不是实际tag字符。 For most programming languages and editors (including PowerShell ISE) the default is four spaces, and that's what we recommend. Different teams and projects may have different standards, and when contributing to a project, you should abide by the predominant style, of course.
 
 
 
