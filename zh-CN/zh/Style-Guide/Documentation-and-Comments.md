@@ -1,8 +1,8 @@
-### Documenting and Comments
+### 记录和评论
 
-Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes!
+与该代码相矛盾的评论比没有评论更加严重。 当代码更改时，总是优先考虑及时更新评论!
 
-Comments should be in English, and should be complete sentences. If the comment is short, the period at the end can be omitted.
+评论应使用英文，并应是完整的句子。 If the comment is short, the period at the end can be omitted.
 
 Remember that comments should serve to your reasoning and decision-making, not attempt to explain what a command does. With the exception of regular expressions, well-written PowerShell can be pretty self-explanatory.
 
