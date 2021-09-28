@@ -20,9 +20,9 @@ $Margin = $Margin + 2
 
 不要过分注释。 除非你的代码特别模糊， 不要在每行前面加上一条注释 — — 这样做会破坏代码并使它更难阅读。  相反，写一个块注释。
 
-Block comments generally apply to some or all of the code which follows them, and are indented to the same level as that code. Each line should start with a # and a single space.
+块注释一般适用于跟随它们的部分或全部代码，并且缩进与该代码相同的级别。 每一行应以# 和单个空格开头。
 
-If the block is particularly long (as in the case of documentation text) it is recommended to use the `<# ... #>` block comment syntax, but you should place the comment characters on their own lines, and indent the comment:
+如果块特别长(例如文档文本的情况)，建议使用 `<# ... #>` 语法，但你应该将注释放在自己的行上，并缩进：
 
 ```PowerShell
 # Requiring a space makes things legible and prevents confusion.
@@ -37,9 +37,9 @@ If the block is particularly long (as in the case of documentation text) it is r
 #>
 ```
 
-#### Inline comments
+#### 行内注释
 
-Comments on the same line as a statement can be distracting, but when they don't state the obvious, and particularly when you have several short lines of code which need explaining, they can be useful.
+与语句在同一行上的注释可能会让人分心，但是当它们没有说明显而易见的事情时，尤其是当您有几行短代码需要解释时，它们会很有用。
 
 They should be separated from the code statement by at least two spaces, and ideally, they should line up with any other inline comments in the same block of code.
 
@@ -51,11 +51,11 @@ $Options = @{
 }
 ```
 
-#### Documentation comments
+#### 记录和注释
 
-Comment-based help should be written in simple language.
+基于评论的帮助应该用简单的语言编写。
 
-You're not writing a thesis for your college Technical Writing class - you're writing something that describes how a function works. Avoid unnecessarily large words, and keep your explanations short. You're not trying to impress anyone, and the only people who will ever read this are just trying to figure out how to use the function.
+你没有为你的大学技术课写论文，写一些描述一个函数如何工作的东西。 Avoid unnecessarily large words, and keep your explanations short. You're not trying to impress anyone, and the only people who will ever read this are just trying to figure out how to use the function.
 
 If you're writing in what is, for you, a foreign language, simpler words and simpler sentence structures are better, and more likely to make sense to a native reader.
 
