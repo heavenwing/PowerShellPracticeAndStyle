@@ -55,29 +55,29 @@ $Options = @{
 
 基于评论的帮助应该用简单的语言编写。
 
-你没有为你的大学技术课写论文，写一些描述一个函数如何工作的东西。 Avoid unnecessarily large words, and keep your explanations short. You're not trying to impress anyone, and the only people who will ever read this are just trying to figure out how to use the function.
+你没有为你的大学技术课写论文，写一些描述一个函数如何工作的东西。 避免不必要的大字，保持您的解释简短。 你不是想给任何人留下深刻印象，唯一会读到这篇文章的人只是想弄清楚如何使用这个功能。
 
-If you're writing in what is, for you, a foreign language, simpler words and simpler sentence structures are better, and more likely to make sense to a native reader.
+如果您用外语写作，更简单的单词和更简单的句子结构更好，并且更有可能对母语读者有意义。
 
-Be complete, but be concise.
+完整，但简洁。
 
-##### Location
+##### 地址
 
-In order to ensure that the documentation stays with the function, documentation comments should be placed INSIDE the function, rather than above. To make it harder to forget to update them when changing a function, you should keep them at the top of the function, rather than at the bottom.
+为了确保文档与函数保持一致，文档注释应该放在函数内部，而不是上面。 为了在更改函数时更难忘记更新它们，您应该将它们放在函数的顶部，而不是底部。
 
-Of course, that's not to say that putting them elsewhere is wrong -- but this is easier to do, and harder to forget to update.
+当然，这并不是说把它们放在别处是错误的——但这比较容易做，而且更难忘记更新。
 
-##### Put Details in the Notes
+##### 当然，这并不是说把它们放在别处是错误的——但这更容易做到，也更难忘记更新。 将详细信息放在注释中。
 
-If you want to provide detailed explanations about how your tool works, use the `Notes` section for that.
+如果您想要提供关于您的工具如何工作的详细解释，请为此使用 `笔记` 部分。
 
-##### Describe The Function
+##### 描述解决方案
 
-Every script function command should have at least a short statement describing it's function. That is the `Synopsis`.
+每个脚本函数命令都应该至少有一个描述其函数的简短说明。 这是 `Synopsis`。
 
-##### Document Each Parameter
+##### 记录每个参数
 
-Each parameter should be documented. To make it easier to keep the comments synchronized with changes to the parameters, the preferred location for parameter documentation comments is _within_ the `param` block, directly above each parameter. Examples can be found in the ISE snippets:
+每个参数都应该被记录下来。 为了更容易地使注释与参数更改保持同步，参数文档注释的首选位置位于 `param` 块内，每个参数正上方。 例子可以在ISE代码片段中找到：
 
 ```powershell
 param (
@@ -93,11 +93,11 @@ param (
 )
 ```
 
-It is also possible to write `.PARAMETER` statements with the rest of the documentation comments, but experience shows they are more likely to be kept up-to-date if you put them closer to the code they document.
+也可以用其余的文档注释编写`.PARAMETER` 语句，但经验表明，如果您将它们放在更接近它们记录的代码的位置，它们更有可能保持最新。
 
-##### Provide Usage Examples
+##### 提供使用实例
 
-Your help should always provide an example for each major use case. A 'usage example' is just an example of what you would type in to Powershell to run the script - you can even cut and paste one from the command line while you're testing your function.
+您的帮助应该始终为每个主要使用案例提供一个示例。 一个“用法示例”仅仅是一个示例，说明您将输入到 Powershell 来运行脚本 - 在测试您的功能时，您甚至可以从命令行中剪切并粘贴一个。
 
 ```PowerShell
 function Test-Help {
@@ -123,11 +123,11 @@ function Test-Help {
 }
 ```
 
-### DOC-01 Write comment-based help
+### DOC-01 编写基于注释的帮助
 
-You should always write comment-based help in your scripts and functions.
+您应该始终在脚本和函数中写入基于注释的帮助。
 
-Comment-based help is formatted as follows:
+基于注释的帮助格式如下：
 
 ```PowerShell
 function Get-Example {
@@ -166,8 +166,8 @@ function Get-Example {
     #>
 ```
 
-Comment-based help is displayed when the user types `help Get-Example` or `Get-Example -?`, etc.
+当用户键入 `help Get-Example` 或 `Get-Example -?` 等时，会显示基于注释的帮助。
 
-Your help should be helpful. That is, if you've written a tool called `Get-LOBAppUser`, don't write help that merely says, "Gets LOB App Users." Duh.
+您的帮助应该是有帮助的。 也就是说，如果您已经编写了一个名为 `Get-LOBAppUser`的工具，不要帮助只说会"获取LOB App用户"。" Duh.
 
-**Further information:** You can get more on the use of comment-based help by typing `help about_Comment_Based_Help` within Powershell.
+**更多信息：** 您可以在 Powershell 中键入 `帮助 about_Comment_Based_Help` 获得更多关于基于注释的帮助。
