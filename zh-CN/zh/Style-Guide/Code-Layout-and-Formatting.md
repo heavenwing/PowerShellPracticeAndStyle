@@ -135,7 +135,7 @@ end {
 
 ##### 每个缩进级别使用四个 *空格*
 
-通常您会按 `[Tab]` 键缩进，但大多数编辑器可以配置为插入空格而不是实际tag字符。 For most programming languages and editors (including PowerShell ISE) the default is four spaces, and that's what we recommend. Different teams and projects may have different standards, and when contributing to a project, you should abide by the predominant style, of course.
+通常您会按 `[Tab]` 键缩进，但大多数编辑器可以配置为插入空格而不是实际tag字符。 对于大多数编程语言和编辑器(包括PowerShell ISE)，默认是四个空格，这是我们建议的。 不同的团队和项目可能有不同的标准，在为某个项目工作时，你当然应该遵守这个项目的主导风格。
 
 
 
@@ -148,7 +148,7 @@ function Test-Code {
 ```
 
 
-Indenting more than 4-spaces is acceptable for continuation lines (when you're wrapping a line which was too long). In such cases you might indent more than one level, or even indent indent an odd number of spaces to line up with a method call or parameter block on the line before.
+持续行可以缩进超过 4 个空格(当你换行过长时)。 在这种情况下，您可能会缩进多个级别，甚至缩进奇数个空格以与前一行的方法调用或参数块对齐。
 
 
 
@@ -165,7 +165,7 @@ function Test-Code {
 
 
 
-#### Maximum Line Length
+#### 最大行长度
 
 Limit lines to 115 characters when possible.
 
