@@ -1,10 +1,10 @@
-### Code Layout & Formatting
+### 代码布局 & 格式
 
-These guidelines are about readability. Some of them are arbitrary rules, but they are based on decades of traditions in programming, so while you may disagree with some rules (and should always follow the rules of individual projects), when we ask you to leave an empty line after a closing function brace, or two lines before functions, we're not being capricious, we're doing so because it makes it easier for experienced developers to scan your code.
+这些准则关于代码可读性。 其中一些规则是武断的，但它们是以几十年的方案拟订传统为基础的。 如果你可能不同意某些规则(而且应该始终遵循个别项目的规则)， 当我们要求您在关闭函数之后留下一条空行，或者在函数之前留下两条线， 是因为它使有经验的开发者更容易扫描你的代码。
 
-#### Maintain Consistency in Layout
+#### 保持布局一致性
 
-Rules about indentation, line length, and capitalization are about consistency across code bases. Long practice has shown that it's easier to read and understand code when it looks familiar and you're not being distracted by details, which means that it's better for everyone in the community to follow a single set of rules.
+关于缩进、行长度和大小写的规则涉及基础代码之间的一致性。 Long practice has shown that it's easier to read and understand code when it looks familiar and you're not being distracted by details, which means that it's better for everyone in the community to follow a single set of rules.
 
 We don't expect everyone to follow these guidelines, and rules for individual projects always trump these. Whether for legacy reasons, or to match guidelines for multiple languages in a single project, different projects may have different style guidelines. Since the goal is consistency, you should always abide by any style rules that are in place on the project you are contributing to.
 
