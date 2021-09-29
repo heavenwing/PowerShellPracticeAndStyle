@@ -232,7 +232,7 @@ function Get-User {
 
   ValidateNotNull 属性指定参数值不能为空 ($null)。 如果参数值为空，Windows PowerShell 会生成错误。
 
-  ValidateNotNull 属性设计为在未指定参数值的类型或指定的类型将接受 Null 值时使用。 （如果您指定一个不接受空值的类型，例如字符串，则空值将在没有 ValidateNotNull 属性的情况下被拒绝，因为它与指定的类型不匹配。
+  ValidateNotNull 属性设计为在未指定参数值的类型或指定的类型将接受 Null 值时使用。 （如果您指定一个不接受空值的类型，例如字符串，则空值将在没有 ValidateNotNull 属性的情况下被拒绝，因为它与指定的类型不匹配。)
 
   ```PowerShell
   param (
