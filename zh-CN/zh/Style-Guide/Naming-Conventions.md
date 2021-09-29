@@ -77,4 +77,4 @@ At line:1 char:1
 
 #### 另见《大小写惯例》
 
-在代码布局和格式章节中，有一个关于 [大小写惯例](\PowerShellPracticeAndStyle\Style-Guide\Code-Layout-and-Formatting.md#Capitalization-Conventions) 的章节。
+在代码布局和格式章节中，有一个关于 [大小写惯例](\PowerShellPracticeAndStyle\Style-Guide\Code-Layout-and-Formatting.md#Capitalization-Conventions) 的板块。
