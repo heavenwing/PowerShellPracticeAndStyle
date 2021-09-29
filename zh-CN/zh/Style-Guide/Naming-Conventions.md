@@ -1,6 +1,6 @@
 ### 命名规范
 
-一般而言，更倾向于对命令和参数使用完整的显式名称，而不是使用别名或简短形式。 有一些工具，例如 [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)'s `Invoke-Formater` 以及类似于 [Expand-Alias](https://github.com/PoshCode/ModuleBuilder/blob/master/PotentialContribution/ResolveAlias.psm1) 的脚本来修复许多, 但并非所有这些问题。
+一般而言，更倾向于对命令和参数使用完整的显式名称，而不是使用别名或简短形式。 有一些工具，例如 [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)的` Invoke-Formater ` 以及类似于 [Expand-Alias](https://github.com/PoshCode/ModuleBuilder/blob/master/PotentialContribution/ResolveAlias.psm1) 的脚本来修复许多问题, 不过无法解决所有问题。
 
 #### 使用每个命令的全名。
 
