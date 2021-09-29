@@ -1,4 +1,4 @@
-待办：本节可能应合并到 [代码布局和格式](Code-Layout-and-Formatting.md)， 且基于 [#15](https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/15)。我们应该删除或重写背景部分。
+待办：本节可能需要合并到 [代码布局和格式](Code-Layout-and-Formatting.md)中， 且基于 [#15](https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/15)。我们应该删除或重写背景部分。
 
 # READ-01 缩进您的代码
 
