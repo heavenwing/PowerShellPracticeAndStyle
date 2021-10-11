@@ -12,7 +12,7 @@
 
 #### 大小写惯例
 
-PowerShell不是大小写敏感的，但我们遵循大小写惯例使得代码可读。 它们基于微软为.NET框架创建的 [大小写惯例](https://msdn.microsoft.com/en-us/library/ms229043) ，因为PowerShell 是一个 .NET脚本语言，并且 PowerShell cmdlet主要是按照这些准则用.NET语言撰写的。
+PowerShell**不是**大小写敏感的，但我们遵循大小写惯例使得代码可读。 它们基于微软为.NET框架创建的 [大小写惯例](https://msdn.microsoft.com/en-us/library/ms229043) ，因为PowerShell 是一个 .NET脚本语言，并且 PowerShell cmdlet主要是按照这些准则用.NET语言撰写的。
 
 ##### 术语
 
